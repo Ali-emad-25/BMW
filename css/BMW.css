@@ -1085,7 +1085,6 @@ footer .image img {
 }
 footer .links {
   list-style: none;
-  /* flex: 1; */
 }
 footer .links li:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.37);
