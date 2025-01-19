@@ -22,6 +22,12 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -81,7 +87,6 @@ body {
 }
 .main-button {
   display: block;
-  text-decoration: none;
   background-color: var(--main-color);
   color: var(--third-color);
   font-size: 23px;
@@ -154,7 +159,6 @@ body {
 }
 .second-button {
   display: block;
-  text-decoration: none;
   background-color: var(--secondary-color);
   width: fit-content;
   border-radius: 30px;
@@ -217,8 +221,7 @@ body {
 /* End Global Rules */
 /* Start header */
 header {
-  background-color: var(--third-color);
-  box-shadow: 0 0 15px var(--main-color);
+  box-shadow: 0 0 15px var(--third-color);
 }
 header .container {
   display: flex;
@@ -252,7 +255,6 @@ header .logo:hover {
   }
 }
 header .nav {
-  list-style: none;
   display: flex;
 }
 header .nav > li:hover .menu {
@@ -262,7 +264,6 @@ header .nav > li:hover .menu {
 }
 header .nav > li > a {
   display: block;
-  text-decoration: none;
   padding: 25px;
   font-size: 22px;
   text-transform: uppercase;
@@ -285,7 +286,7 @@ header .nav > li > a {
 @media (max-width: 767px) {
   header .nav > li > a {
     padding: 15px 8px;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
 header .nav > li > a:hover {
@@ -346,7 +347,6 @@ header .nav > li > a:hover::before {
 .menu ul a {
   width: fit-content;
   display: block;
-  text-decoration: none;
   padding: 20px 25px;
   font-size: 22px;
   text-transform: uppercase;
@@ -361,9 +361,12 @@ header .nav > li > a:hover::before {
   .menu {
     flex-direction: column;
     gap: 0;
+    width: 95%;
+    margin-left: 2.5%;
+    padding: 8px 40px;
   }
   .menu ul {
-    width: 100%;
+    min-width: 270px;
   }
   .menu ul:first-of-type {
     border-bottom: 1px solid #ffffffcd;
@@ -371,28 +374,14 @@ header .nav > li > a:hover::before {
   .menu ul a {
     padding: 20px 25px;
     font-size: 13px;
+    margin: auto;
   }
 }
 /* End Menu */
 /* End header */
 /* Start Landing */
 .landing {
-  position: relative;
-}
-@media (max-width: 767px) {
-  .landing {
-    height: calc(100vh - 89px);
-  }
-}
-@media (min-width: 768px) {
-  .landing {
-    height: calc(100vh - 110px);
-  }
-}
-@media (min-width: 992px) {
-  .landing {
-    height: calc(100vh - 75px);
-  }
+  height: 100vh;
 }
 .landing video {
   position: absolute;
@@ -405,7 +394,7 @@ header .nav > li > a:hover::before {
 }
 .landing .intro {
   position: absolute;
-  top: 50%;
+  top: calc(50% + 30px);
   left: 8%;
   transform: translateY(-50%);
   color: var(--secondary-color);
@@ -454,8 +443,8 @@ header .nav > li > a:hover::before {
 /* End Landing */
 /* Start Services */
 .services {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+  padding-top: 115px;
+  padding-bottom: 115px;
 }
 .services p {
   text-align: center;
@@ -463,6 +452,7 @@ header .nav > li > a:hover::before {
   line-height: 1.7;
   font-size: 25px;
   text-transform: uppercase;
+  word-spacing: 6px;
 }
 .services .button-srv {
   margin-top: 30px;
@@ -505,6 +495,7 @@ header .nav > li > a:hover::before {
   line-height: 1.9;
   font-size: 20px;
   text-transform: uppercase;
+  word-spacing: 5px;
 }
 .about .contant .video,
 .electric .contant .video,
@@ -670,49 +661,45 @@ header .nav > li > a:hover::before {
 .other .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
+  gap: 50px;
 }
 @media (max-width: 991px) {
   .other .container {
     row-gap: 60px;
   }
 }
-.other .col .title {
+.other .col {
   display: flex;
-  align-items: center;
   gap: 30px;
 }
 @media (max-width: 991px) {
-  .other .col .title {
+  .other .col {
     flex-direction: column;
+    text-align: center;
+  }
+  .other .col img,
+  .other .col .info,
+  .other .col .info .second-button {
+    margin: auto;
   }
 }
-.other .col .title img {
+.other .col img {
   width: 60px;
+  height: 60px;
 }
-.other .col .title h3 {
+.other .col .info {
+  max-width: 300px;
+}
+.other .col .info h3 {
   color: var(--main-color);
   text-transform: uppercase;
   font-size: 25px;
 }
-.other .col p {
+.other .col .info p {
   color: var(--secondary-color);
   font-size: 17px;
   line-height: 1.5;
-  margin: 20px 20px 25px;
-}
-@media (max-width: 991px) {
-  .other .col p {
-    text-align: center;
-  }
-}
-.other .col .second-button {
-  margin-left: 20px;
-}
-@media (max-width: 991px) {
-  .other .col .second-button {
-    margin: auto;
-  }
+  margin: 20px 0 25px;
 }
 /* End Other */
 /* Start Capabilities */
@@ -750,7 +737,7 @@ header .nav > li > a:hover::before {
 .capabilities .section .prog-holder h4 {
   color: var(--secondary-color);
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 25px;
 }
 .capabilities .section .prog-holder .prog {
   background-color: var(--secondary-color);
@@ -827,6 +814,7 @@ header .nav > li > a:hover::before {
   color: var(--secondary-color);
   font-size: 16px;
   transition: var(--main-transition);
+  line-height: 1.5;
 }
 .customer .section .opinion .text p:hover {
   transform: scale(1.1);
@@ -843,7 +831,6 @@ header .nav > li > a:hover::before {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  list-style: none;
 }
 .customer .section .bullet li {
   width: 12px;
@@ -865,7 +852,7 @@ header .nav > li > a:hover::before {
 }
 .states .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 .states .state {
   text-align: center;
@@ -947,7 +934,6 @@ header .nav > li > a:hover::before {
 }
 .contact form button {
   display: block;
-  text-decoration: none;
   background-color: var(--main-color);
   color: var(--third-color);
   font-size: 23px;
@@ -1083,16 +1069,12 @@ footer .image:hover {
 footer .image img {
   max-width: 100%;
 }
-footer .links {
-  list-style: none;
-}
 footer .links li:not(:last-child) {
   border-bottom: 1px solid rgba(255, 255, 255, 0.37);
 }
 footer .links a {
   width: fit-content;
   display: block;
-  text-decoration: none;
   color: var(--secondary-color);
   padding: 16px;
   font-size: 18px;
