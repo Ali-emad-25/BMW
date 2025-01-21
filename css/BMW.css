@@ -636,6 +636,8 @@ header .nav > li > a:hover::before {
   gap: 40px;
 }
 .models .box {
+  width: 355px;
+  margin: auto;
   background-color: var(--secondary-color);
   color: var(--third-color);
   text-align: center;
@@ -644,6 +646,11 @@ header .nav > li > a:hover::before {
 }
 .models .box:hover {
   transform: translateY(-15px);
+}
+@media (max-width: 991px) {
+  .models .box {
+    width: 330px;
+  }
 }
 @media (max-width: 767px) {
   .models .box {
