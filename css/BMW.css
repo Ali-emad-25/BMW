@@ -219,8 +219,8 @@ a {
   }
 }
 .scroll-up {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   background-color: white;
   border-radius: 50%;
   position: fixed;
@@ -228,8 +228,14 @@ a {
   right: -60px;
   z-index: 999;
   box-shadow: 0 0 20px 0 var(--main-color);
+  transition: var(--main-transition);
   animation-name: apear;
   animation-timeline: scroll(y);
+}
+@media (min-width: 992px) {
+  .scroll-up:hover {
+    transform: scale(1.1);
+  }
 }
 .scroll-up i {
   position: absolute;
@@ -328,6 +334,12 @@ header .nav > li > a:hover::before {
     padding: 15px 6px;
     font-size: 12px;
   }
+}
+header .nav > li > a.active {
+  color: var(--main-color);
+}
+header .nav > li > a.active::before {
+  left: 0;
 }
 /* Start Menu */
 .menu {
@@ -670,7 +682,10 @@ header .nav > li > a:hover::before {
   max-width: 100%;
   transition: var(--main-transition);
 }
-@media (min-width: 768px) {
+.models .box:hover img {
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
   .models .box:hover img {
     transform: scale(1.1);
   }
@@ -684,10 +699,11 @@ header .nav > li > a:hover::before {
   margin-top: 30px;
   margin-bottom: 20px;
   font-weight: normal;
+  font-size: 18px;
   color: var(--third-color);
 }
 .models .box .second-button {
-  margin: 20px auto 45px;
+  margin: 25px auto 40px;
 }
 @media (max-width: 767px) {
   .models .box .second-button {
@@ -775,6 +791,10 @@ header .nav > li > a:hover::before {
 }
 .capabilities .section .prog-holder {
   margin-bottom: 45px;
+  transition: var(--main-transition);
+}
+.capabilities .section .prog-holder:hover {
+  transform: scale(1.1);
 }
 .capabilities .section .prog-holder h4 {
   color: var(--secondary-color);
@@ -795,6 +815,7 @@ header .nav > li > a:hover::before {
   height: 100%;
   display: block;
   position: relative;
+  box-shadow: 0 0 15px var(--third-color);
 }
 .capabilities .section .prog-holder .prog span::after {
   content: attr(data-progress);
